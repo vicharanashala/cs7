@@ -1,0 +1,1269 @@
+
+Student Dashboard Changes
+🖥️ Side-Bar Updates
+• Yaksha Chatbot
+	◦ Remove the chatbot option from the sidebar.
+	◦ Instead, place a chatbot button at the bottom-right corner of the dashboard (like big tech companies do).
+	◦ Make sure it is always visible in every tab I switch and easy for students to access.
+• Recently Viewed
+	◦ Remove this section completely since it is not useful for students.
+• My Questions
+	◦ This section will show the questions posted by the student using the “Ask a Question” option.
+	◦ Each question will display its status (e.g., posted, seen, response provided)like WhatsApp approach.
+For Personal Questions:
+	◦ Moderator sees the query → status updates to “Seen.”
+	◦ Moderator posts a response or resolution → status updates accordingly.
+For Community Questions:
+	◦ The question appears in the Community Q&A section for all students.
+	◦ Any student can answer.
+	◦ Once a question has 10 different responses, no more answers can be added (only upvotes/downvotes allowed).
+	◦ The top answer is shown to the moderator by default.
+	◦ Moderator can click to view the next 2 answers, and click again to view all 10.
+        The current stage must provides three options: Approve, Reject, or Edit the student response and then approve.
+	◦ Before a student posts their own answer, they are asked: “Is the existing answer correct?”
+		▪︎ If they say yes, no need to post.
+		▪︎ If they say no, they can write and submit their answer.
+---
+✍️ Ask a Question
+Students can post questions in two ways:
+1. Through the Ask a Question option.
+2. Through the Chatbot.
+Process for Ask a Question:
+• Student writes their description.
+• Optionally uploads a screenshot.
+• Selects a category (or “Other”).
+• System checks:
+	1. FAQs → If an answer exists, show it. Ask: “Does this answer your question?”
+		▪︎ If no, allow posting the question.
+	2. If answer doesn't exist in faq, Show top 2 unresolved queries that are similar to the current post student has written.
+		▪︎ If student clicks “I have the same query,” their ID is tagged to the same question.
+This way, moderators can respond collectively to similar queries.
+---
+📚 Browse FAQs
+• Students can search for their query.
+• Results show questions with a dropdown to view answers (answers only appear when clicked).
+• By default, below the search bar, FAQs are displayed in this order:
+	◦ Most recent (within a week).
+	◦ Most asked → least asked.
+• Each FAQ has:
+	◦ Helpful / Unhelpful feedback option.
+	◦ Upvote/downvote count is visible only to moderators (not to students).
+• Tags/categories are shown below the search bar.
+	◦ Students can filter by category.
+	◦ Each question shows only the question, with a dropdown to reveal the answer.
+• Moderator-only view:
+	◦ How many students viewed the FAQ.
+	◦ How many found it helpful.
+---
+✅ In short:
+• Sidebar is simplified (no chatbot, no recently viewed).
+• Chatbot moves to bottom-right corner.
+• “My Questions” shows personal and community queries with clear rules.
+• “Ask a Question” checks FAQs and existing queries before posting.
+• FAQs section is searchable, organized, and feedback-driven for moderators.
+
+<------------------------ ****** The above is already implemented! ********  ------------------------->
+
+🔧 Admin & Moderator Dashboard Updates
+FAQ Management
+• Access: Shared between Admins and Moderators. All changes sync across both dashboards.
+• Cards:
+	◦ Helpful FAQs percentage
+	◦ Flagged (formerly Unhelpful) FAQs percentage
+• FAQ List & Filters:
+	◦ Columns: Question (renamed from Title), Category, Status, Updated, Action (with eye button to view answers).
+	◦ Option to create new FAQs directly in the table.
+	◦ Filters: Helpful FAQs, Flagged FAQs.
+	◦ Display count of flagged FAQs.
+	◦ Reset Helpful/Flagged stats to zero after FAQ edits.
+• Categories & Tags: Move management into FAQ Management. Remove from sidebar.
+---
+Moderation Queue
+• Must be identical for Admins and Moderators.
+---
+Chatbot Feedback
+• Scope: Includes responses from both chat types.
+• Cards: Keep Helpful and Flagged (remove third card).
+• Chat List & Filters:
+	◦ Section to view all student chats.
+	◦ Filters: Helpful or Flagged.
+	◦ Show total chat count.
+---
+Admin Settings
+• No changes required.
+---
+🛠 Moderator Dashboard Specifics
+• Main Dashboard Cards:
+	◦ Unresolved Questions count
+	◦ Flagged FAQs count
+	◦ Remove duplicate candidates card
+	◦ Remove pending answer card
+• Sidebar:
+	◦ Rename Pending Answers → Unresolved Questions.
+	◦ Two sections:
+		▪︎ Personal Questions (to be answered)
+		▪︎ Community Questions (displayed as current application cards).
+• Remove:
+	◦ Flagged FAQs section (since FAQ Management is added).
+	◦ Duplicate candidate section.
+	◦ Other redundant Unresolved Questions section.
+	◦ Browse FAQ section.
+---
+📌 Example FAQ Answer Display
+Question: Can I use a personal laptop for remote work?
+Response: Yes, personal laptops are allowed provided you have VPN access and follow IT security guidelines shared during onboarding.
+Footer: by Kiran D. · 2h ago
+Buttons:
+• Show More Answers (click once → +2 answers, click again → all 10 answers, click again → hide all except first).
+• Approve
+• Reject
+• Edit
+Additional Features:
+• Show count of students who asked the same question.
+• On click: view student names.
+• Filter option: prioritize questions asked by multiple students (high → low order).
+
+Moderator Dashboard Updates
+Header Section (Default View)
+• Display:
+“Welcome back, Jahnvi 👋 Samagama Internship Portal · Signed in as moderator”
+• This replaces the default landing page.
+• Remove: “Moderation Dashboard · Items requiring your attention.”
+• Below the welcome message, show all dashboard cards.
+---
+Dashboard Cards
+📌 Personal Questions Card
+• Total count of personal questions posted by all students.
+• Count of Total unanswered personal questions.
+• Count of Total personal questions posted today by all students.
+---
+📌 Community Questions Card
+• Total count of community questions posted by all students (answered + unanswered).
+• Count of community questions answered by peer students.
+• Count of community questions unanswered by peer students.
+---
+📌 Community Questions Today Card
+• Total count of community questions posted today (answered + unanswered).
+• Count of community questions answered today by peer students.
+• Count of community questions unanswered today by peer students.
+---
+📌 FAQs Card
+• Total count of FAQs.
+• Count of FAQs added today.
+• Count of FAQs added this week.
+---
+📌 Flagged FAQs Card
+• Total count of flagged FAQs.
+• Count of FAQs flagged today.
+• Count of FAQs flagged this week.
+
+<------------------------ ****** The above is already implemented! ********  ------------------------->
+
+<------------------------ ****** The below work implementation work is pending ********  ------------------------->
+
+Moderator and Admin and students :
+Card containing the count details regarding open community question idle for a week, < 3 days last 24 hours
+Also reflect this in the filter too in the community section!
+
+Implement caching in the “Ask a Question” section under:
+
+### 3. Check Q
+- Add caching support to improve performance and reduce repeated API/database calls.
+
+For Moderators, Admins, and Students:
+- Add dashboard cards displaying the count of community questions based on the following categories:
+  - Open community questions idle for more than 1 week
+  - Open community questions idle for more than 3 days
+  - Open community questions idle from the last 24 hours
+
+Additionally:
+- Reflect these same categories and counts within the filters section of the Community page.
+- Ensure the filters are dynamic and stay in sync with the dashboard card counts.
+
+<--->
+ Plan something that address a Q&A that is serious and important
+
+Xxx The search functionality in "Check FAQ" it must search in an order first for the last 7 days and then in the most frequent search queries that was asked many times and the last the remaining part. Xxxx
+
+Stop the search after a time like 2 minutes.
+
+---
+<-- ******* optional ***** ---
+
+Design and implement an improved Q&A search flow for the “Check FAQ” section that prioritizes serious and important questions efficiently. 
+
+******* optional ****** -->
+
+---
+ 
+In Student Dashboard 
+Home Section Layout
+Below Header: "Welcome back, Student (Dev) 👋 Samagama Internship Portal · Signed in as student"
+
+Display Cards (displayed below header):
+1. Open Community Q&A – shows total number of open questions(Answered and Unanswered both).
+2. Open Community Q&A Unanswered – shows total number of open questions  Unanswered both.
+2. Questions You Answered – shows count of questions answered by the student from day 1.
+3. Spourti Points Earned – shows total points earned contributing for Open Community Q&A.
+
+---
+
+Content Tabs (below cards)
+• Three buttons displayed in the same line:
+	◦ Recently Added FAQs
+	◦ Recently Updated FAQ Questions
+	◦ Recent Community Questions
+• Behavior:
+	◦ Clicking a button switches the view to that category.
+	◦ Each category displays maximum 5 items.
+	◦ Each section includes an option to “View All” for full details.
+
+
+Amend Community Q&A interface where:
+• The question title is hidden, and instead the exact question description  is shown.
+• Each question has a dropdown button that reveals the answers (only if answers exist).
+• There is also a button to answer the question.
+• When a user clicks the “Answer” button, a small inline popup appears (in the same section as the answers) asking: “Are you sure the existing answers are not up to the mark?”
+• Inside this popup, the user can write their answer in a text box.
+• Below the text box, include a small checkbox with the statement: “I assume that the answer I provided is correct.”
+
+---
+Create the following Student IDs with the details below:
+
+### Students
+| Sr. No. | Name        | Password          | Initial Spurti Points |
+|---------|-------------|------------------|----------------------|
+| 1 | Abhishek   | Student@2026 | 100 |
+| 2 | Meena      | Student@2026 | 100 |
+| 3 | Harshdeep  | Student@2026 | 100 |
+| 4 | Harshitha  | Student@2026 | 100 |
+| 5 | Spandan    | Student@2026 | 100 |
+| 6 | Tejswini   | Student@2026 | 100 |
+| 7 | Ravi       | Student@2026 | 100 |
+| 8 | Gazal      | Student@2026 | 100 |
+
+Create the following Moderator IDs with the details below:
+
+### Moderators
+| Sr. No. | Name      | Password            |
+|---------|-----------|--------------------|
+| 1 | Kushagra | Moderator@2026 |
+| 2 | Jahnvi   | Moderator@2026 |
+| 3 | Joyita   | Moderator@2026 |
+
+Create the following Admin IDs with the details below:
+
+### Admins
+| Sr. No. | Name       | Password        |
+|---------|------------|----------------|
+| 1 | Divy      | Admin@2026 |
+| 2 | Anshuman  | Admin@2026 |
+
+After creating the above accounts, remove the following section completely from the Login Page:
+
+### Remove this section:
+“Dev-only · Test Accounts”
+
+- Click a role to auto-fill credentials. Visible only in development builds and removed before release.
+
+#### Admin
+admin@samagama.test · Full system access
+
+#### Moderator
+moderator@samagama.test · Reviews answers and flags
+
+#### Student
+student@samagama.test · Default student view
+
+----
+
+### Student Analytics Page
+
+Create a dedicated Analytics Page for Students to help them track their participation, contributions, and performance within the Community Q&A platform.
+
+### Features to Include
+
+#### Community Q&A Performance
+Display analytics related to the student’s activity, including:
+- Total number of Community Q&A questions answered
+- Total accepted/helpful answers
+- Participation trends and engagement statistics
+
+#### Peer Ranking Section
+- Add a sidebar section that displays the student’s rank compared to other peers.
+- Rankings should be based on:
+  - Number of Community Q&A answers contributed
+  - Overall engagement and activity
+
+#### Spurti Points Leaderboard
+- Include a separate ranking module for Spurti Points.
+- Students should be able to view:
+  - Their current Spurti Points
+  - Their rank among peers
+  - A leaderboard of top-performing students based on Spurti Points
+
+### Additional Enhancements
+- Add filters such as:
+  - Weekly
+  - Monthly
+  - Overall rankings
+- Use cards, graphs, and leaderboard components for a clean and interactive UI.
+- Ensure rankings and analytics update dynamically in real time or through scheduled refreshes.
+
+### Goal
+The Analytics Page should encourage healthy competition, increase student engagement, and motivate students to actively participate in the Community Q&A ecosystem.
+
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+*** Admin Dashboard Plan by Harshdeep Sharma ***
+
+Purpose
+This document is the admin-branch implementation spec for faq-Avatar. 
+
+High-Level Objective
+The admin experience is the institutional control plane for knowledge governance. It should help administrators:
+- understand overall knowledge health,
+- identify unanswered or low-quality content,
+- manage FAQ publishing and editorial review,
+- control user access and role changes,
+- monitor moderation capacity, and
+- keep a compliance-ready audit trail.
+
+Dashboard Scope
+The admin dashboard is not a single page. It is a set of connected surfaces that work together as one operational workspace.
+- Overview and mission control live in /admin/intelligence.
+- Editorial quality review lives in /admin/faq-quality.
+- Knowledge-base maintenance lives in /admin/faqs and the FAQ editor routes.
+- Search-gap remediation lives in /admin/unanswered-searches.
+- Crowd and issue concentration analysis lives in /admin/issue-heatmap.
+- Workforce control and permissions live in /admin/users and /admin/moderation-load.
+- Institutional traceability lives in /admin/audit-logs.
+
+Shared Behavior and UX Principles
+- All admin pages should use the same premium dashboard shell, card system, and table styling already established in faq-main.
+- All content changes should preserve audit context.
+- Admin actions should favor review, edit, archive, and moderation workflows over destructive operations.
+- Search gaps and FAQ quality issues should surface as actionable items, not just analytics.
+- Shared knowledge-base surfaces should remain consistent for moderator and admin access.
+
+Navigation and Placement
+The admin nav should expose the pages that are operationally important for administrators:
+- Admin Overview / Intelligence
+- FAQ Management
+- User Management
+- Chatbot Feedback if present in the broader dashboard shell
+- Settings if the branch includes settings parity
+- Moderation-related utilities that administrators are allowed to access
+
+1. /admin/intelligence
+This is the admin mission-control page and the main overview surface.
+
+Primary responsibilities
+- Summarize institutional knowledge health.
+- Highlight urgent issues that require action.
+- Surface the biggest search gaps and FAQ quality risks.
+- Show whether moderation throughput is healthy or blocked.
+
+Key content blocks
+- Unresolved Questions metric.
+- No-Result Searches metric.
+- FAQs Needing Review metric.
+- Average Resolution Time metric.
+- Action Required cards.
+- Issue Heatmap preview.
+- Top Unanswered Searches.
+- FAQ Quality Alerts.
+- Audit trail navigation.
+
+Behavior details
+- Metric cards should include current value, trend, and a short implication statement.
+- Action cards should map to concrete next steps such as creating FAQs, reviewing stale content, or assigning moderation work.
+- Issue heatmap content should show concentration of questions and searches by category and day.
+- Unanswered searches should link directly into FAQ creation with prefilled title and answer scaffolding.
+- FAQ quality alerts should link directly into FAQ editing for the selected record.
+
+Expected editorial logic
+- If unresolved questions rise, the page should push the operator toward moderation capacity and backlog review.
+- If unanswered searches rise, the page should highlight missing knowledge coverage.
+- If FAQs needing review exist, the page should treat them as editorial risk.
+- If average resolution time rises above the healthy threshold, the page should imply queue bottlenecks.
+
+2. /admin/issue-heatmap
+This is the category concentration and pattern-analysis page.
+
+Primary responsibilities
+- Show where users are searching or asking questions the most.
+- Help administrators spot hotspots by category.
+- Compare recent pressure across time windows.
+
+Controls and filters
+- 7-day view.
+- 14-day view.
+- 30-day view.
+- 90-day view.
+
+Displayed information
+- A heatmap matrix combining search and question volume.
+- Category narratives that explain why a category is hot.
+- A ranked narrative section for the most significant categories.
+
+Behavior details
+- The selected range should refresh the heatmap and the category narrative cards together.
+- Hover or inspection behavior should explain which category-day intersections are driving pressure.
+- The page should be useful for both editorial planning and moderation staffing.
+
+3. /admin/unanswered-searches
+This is the knowledge-gap remediation page.
+
+Primary responsibilities
+- Show what users are searching for but not finding.
+- Help administrators turn repeated search failures into new or improved FAQs.
+
+Controls and filters
+- Most Common.
+- Most Recent.
+- Highest Impact.
+
+Displayed information
+- Search query.
+- Occurrence count.
+- Last seen date.
+- Suggested FAQ title.
+- Related category.
+- Create FAQ action.
+
+Behavior details
+- Search clusters should be ranked so the most important gaps rise first.
+- The Create FAQ action should prefill the FAQ editor with the suggested title and structured guidance text.
+- If a cluster is tied to a related category, that category should preselect in the editor.
+- The page should be designed for fast remediation, not passive reporting.
+
+4. /admin/faq-quality
+This is the editorial risk and quality-control console.
+
+Primary responsibilities
+- Detect low-quality FAQs.
+- Prioritize content that should be rewritten or archived.
+- Give administrators a decision-making workspace for editorial review.
+
+Controls and filters
+- All.
+- Rewrite Candidates.
+- Archive Candidates.
+
+Displayed information
+- FAQ title.
+- Quality score.
+- Helpfulness ratio.
+- View count.
+- Action classification.
+- Detailed narrative for the selected FAQ.
+- Quality breakdown bars.
+- Trend sparkline.
+
+Available actions
+- Edit FAQ.
+- Archive FAQ.
+- Mark Reviewed.
+
+Behavior details
+- Selecting a FAQ should update the right-side detail panel.
+- Quality breakdown should explain the weighted signals behind the risk score.
+- Trend sparkline should show the recent direction of quality.
+- Actions should update editorial state without breaking the overall workflow.
+
+5. /admin/faqs
+This is the shared knowledge-base control center.
+
+Primary responsibilities
+- List all FAQs in a structured table.
+- Support create, edit, archive, publish, and review operations.
+- Give administrators direct control over the content system.
+
+Filters and controls
+- Status filters: all, draft, published, needs review, archived.
+- Category filter.
+- Minimum quality filter.
+- Row selection for bulk actions.
+- Create New FAQ action.
+
+Displayed columns
+- FAQ title.
+- Status.
+- Category.
+- Quality score.
+- Last updated information.
+- Actions.
+
+Bulk actions
+- Bulk publish.
+- Bulk mark for review.
+- Bulk archive.
+
+Additional content
+- CSV import guidance for structured ingestion.
+
+Behavior details
+- The table should reflect the selected filters immediately.
+- Category and quality filters should narrow the operational list, not just the visual presentation.
+- Bulk actions should operate on the selected FAQ rows only.
+- Import guidance should be visible so the admin knows the expected file format.
+
+6. /admin/faqs/new and /admin/faqs/:id/edit
+This is the FAQ editor and publishing workspace.
+
+Primary responsibilities
+- Create new FAQs.
+- Update existing FAQs.
+- Check similarity before publishing.
+- Capture editorial justification when duplicates are possible.
+
+Editor fields
+- Title.
+- Summary.
+- Answer.
+- Categories.
+- Tags.
+- Status.
+- Duplicate override reason.
+
+Editorial controls
+- Create.
+- Save updates.
+- Publish.
+- Archive.
+- Change review state.
+
+Quality and safety logic
+- Similarity checks should run before final publication.
+- If a high-similarity FAQ exists, the editor should force a human review of the duplicate risk.
+- If the admin intentionally keeps a similar FAQ, the duplicate override reason should be required.
+
+Behavior details
+- Creating from search-gap links or community-answer candidates should prefill the editor.
+- Editing should preserve previous content context and editorial notes.
+- Status changes should stay aligned with the moderation and quality consoles.
+
+7. /admin/users
+This is the access-control and user-administration page.
+
+Primary responsibilities
+- Review all users in the system.
+- Change user roles.
+- Suspend or restore accounts.
+- Preserve accountability for access changes.
+
+Displayed fields
+- Name.
+- Email.
+- Role.
+- Status.
+- Activity dates.
+- Action button.
+
+Available actions
+- Change role.
+- Suspend.
+- Activate.
+
+Behavior details
+- Role changes should alter permissions immediately.
+- Suspension should preserve existing content while preventing new submissions.
+- Confirmation dialogs should be required for access changes.
+- The page should show joined and last-active dates so admins can judge account freshness.
+
+8. /admin/moderation-load
+This is the staffing and throughput dashboard for moderation work.
+
+Primary responsibilities
+- Show whether moderation capacity is keeping up with incoming work.
+- Help assign moderators based on backlog and category pressure.
+- Show moderator performance across the queue.
+
+Displayed sections
+- Pending Queue Depth trend.
+- Categories Consuming Review Time.
+- Moderator Performance.
+- Resolution Funnel.
+
+Behavior details
+- Queue depth should show whether incoming work is rising faster than reviews.
+- Category backlog should show where moderation attention is needed most.
+- Moderator performance should compare approvals, rejections, and average time.
+- Resolution funnel should explain where students drop out of the knowledge path.
+
+9. /admin/audit-logs
+This is the compliance and traceability surface.
+
+Primary responsibilities
+- Provide a filtered institutional audit trail.
+- Support compliance review and investigation.
+
+Behavior details
+- The page should exist as a clean destination for traceability even if the implementation is lightweight.
+- Admin navigation should always provide access to this trail from the intelligence view.
+
+FAQ Management Shared-Surface Rules
+- FAQ Management is shared between moderators and admins.
+- Categories and tags should live inside the FAQ Management experience rather than separate sidebar entries.
+- Any admin-side FAQ edit should remain visible to moderator workflows.
+- Any quality, search-gap, or moderation-candidate signal should be actionable from this shared surface.
+
+Admin Documentation Checklist
+- Mirror faq-main routes and page names.
+- Preserve the mission-control layout on the intelligence page.
+- Keep FAQ creation/editing tightly connected to search gaps and quality alerts.
+- Keep role and access management explicit and auditable.
+- Keep analytics pages readably segmented and action-oriented.
+
+Implementation notes
+- This file should be treated as the authoritative admin-branch documentation for faq-Avatar.
+- If the admin branch grows, add new pages under the relevant section instead of replacing the current structure.
+- Keep wording aligned with the shared dashboard style already established in the branch.
+
+Additional Suggestions to Make the Admin Surface Stronger
+These are not replacements for the pages above. They are additive improvements that can make the platform feel more complete, faster, and more decision-ready.
+
+1. Create a single role-aware home dashboard for admins
+- Add a unified landing page that surfaces the most important admin KPIs first, before the user chooses a drill-down page.
+- Include unresolved question counts, editorial risk counts, moderation backlog, FAQ quality drift, and unanswered-search growth in one glance.
+- Add “next best action” cards so the admin always has a clear place to start.
+
+2. Add saved views and pinned filters everywhere data is tabular
+- Let administrators save filter combinations for FAQ management, unanswered searches, user management, and audit logs.
+- Allow pinned views such as “High-risk FAQs,” “Stale unanswered searches,” or “Recently suspended users.”
+- Add quick-switch chips so the same view can be revisited without reconfiguring controls every time.
+
+3. Build an event-driven live update layer
+- Push moderation and editorial changes to the admin screens in real time so counts, queues, and quality alerts do not feel stale.
+- Prefer lightweight server push or websocket-style updates for queue counts, search clusters, and review status changes.
+- Keep the polling fallback so the system still works if real-time transport is unavailable.
+
+4. Add bulk action previews and undo-safe operations
+- Before bulk archive, bulk publish, or bulk role change, show a preview of the affected records.
+- Add a short undo window for safe recovery when a bulk operation was applied too quickly.
+- Log the full before/after state in the audit trail for accountability.
+
+5. Expand the FAQ Management workflow into a true content lifecycle
+- Add explicit lifecycle states such as draft, under review, approved, published, stale, and archived.
+- Surface stale content automatically when a FAQ has low engagement, rising flags, or rising duplicate detections.
+- Add editorial ownership so specific admins can be accountable for high-impact FAQs.
+
+6. Add advanced search and command-driven navigation
+- Extend the command palette so admin users can jump directly to records, open pages, or create content from keyboard search.
+- Allow search across FAQ titles, user names, audit events, and unanswered query clusters from one surface.
+- Make the command palette the fastest route to any object in the admin system.
+
+7. Add analytics that tell a story, not just a number
+- Show trend deltas, anomaly markers, and “why this matters” text wherever a dashboard number appears.
+- Add category-level drift analysis to reveal what is becoming more common, not only what is currently large.
+- Add a simple “What changed since yesterday?” panel on the intelligence page.
+
+8. Add queue ownership and assignment controls
+- Allow administrators to assign unresolved items or moderation load to specific moderators.
+- Add workload balancing indicators so queues can be redistributed when one moderator is overloaded.
+- Include follow-up reminders and SLA-style escalation rules for items that remain untouched.
+
+9. Add a cross-linking knowledge graph inside admin workflows
+- Let admins jump from a FAQ to related unanswered searches, related community questions, related tags, and related audit events.
+- Show related content side-by-side when editing or reviewing an item.
+- Use these relationships to make remediation more contextual and less repetitive.
+
+10. Add export, reporting, and scheduled summaries
+- Allow CSV or JSON export for FAQ lists, unanswered searches, user roles, and audit events.
+- Add scheduled summary emails or in-app summaries for leadership review.
+- Let the system generate weekly and monthly institutional snapshots.
+
+11. Add better accessibility and keyboard workflow guarantees
+- Ensure every admin table, modal, drawer, and filter cluster is keyboard accessible.
+- Keep focus states, visible labels, and shortcut hints consistent across pages.
+- Make bulk workflows usable without requiring pointer interaction.
+
+12. Add performance safeguards for scale
+- Cache expensive analytics queries and prefetch the next likely admin page after login.
+- Virtualize long lists in FAQ management, unanswered searches, and user management.
+- Keep responses paginated or windowed so the interface remains fast even as the data set grows.
+
+13. Add policy-aware audit enrichment
+- Record the reason behind key admin actions, not only the action itself.
+- Attach decision notes to FAQ archive, publish, role change, and moderation reassignment actions.
+- Surface a compact audit summary on each major record so future admins can understand history without opening a separate log.
+
+14. Add smarter onboarding for new admins
+- Provide a guided first-run checklist that explains the dashboard in order of priority.
+- Add “what to do next” hints beside the main metrics.
+- Surface sample workflows so a new admin can understand how intelligence, FAQ editing, and audit review connect.
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+*** Moderator Dashboard Plan by Harshdeep Sharma ***
+
+Purpose
+This document is the moderator-branch implementation spec for faq-Avatar. 
+
+High-Level Objective
+The moderator experience is the real-time moderation control center for the platform. It should help moderators:
+- triage incoming answers and questions,
+- resolve unresolved questions quickly,
+- request edits when answers need improvement,
+- link duplicate questions,
+- identify FAQ conversion candidates, and
+- move clean content into the shared knowledge base.
+
+Dashboard Scope
+The moderator dashboard is a connected set of work surfaces.
+- Queue triage lives in /moderator/queue.
+- Interactive moderation happens in /moderator/console.
+- Personal throughput and operational health live in /moderator/analytics.
+- Knowledge promotion lives in /moderator/faq-candidates.
+- Shared knowledge-base maintenance happens in /admin/faqs.
+
+Shared Behavior and UX Principles
+- Moderation pages should favor speed, clarity, and keyboard-friendly operation.
+- Queue pages should always make the next action obvious.
+- The moderator should be able to see context, answer text, and pending actions without leaving the console.
+- The system should encourage review, correction, and escalation rather than destructive handling.
+- Shared FAQ management should be reachable from the moderator flow.
+
+1. /moderator/queue
+This is the moderator review queue and the first stop for moderation work.
+
+Primary responsibilities
+- Present all pending moderation work in a compact operational table.
+- Support bulk processing where the task type allows it.
+- Let the moderator jump into the full console for detailed review.
+
+Filters and controls
+- All.
+- Pending Answers.
+- Unresolved.
+- Duplicate Candidates.
+- FAQ Candidates.
+- Sort by Priority.
+- Sort by Age.
+- Sort by Category.
+
+Displayed columns
+- Selection checkbox.
+- Type.
+- Title.
+- Category.
+- Priority.
+- Age.
+- Action.
+
+Available actions
+- Bulk approve.
+- Bulk reject.
+- Bulk resolve.
+- Open Console.
+- Review selected item.
+
+Behavior details
+- The queue should default to priority-first operation.
+- Selecting rows should enable relevant bulk actions.
+- The queue should allow quick navigation to a specific item in the console.
+- Empty queue state should communicate that moderation is ahead of the curve.
+
+2. /moderator/console
+This is the main moderation workspace and the core action surface.
+
+Primary responsibilities
+- Show the selected queue item in full context.
+- Let moderators review answers and questions without leaving the page.
+- Provide decisive actions for approval, rejection, correction, and escalation.
+
+Layout and structure
+- Left pane: priority queue.
+- Right pane: detailed content review.
+- Bottom bar: action controls and shortcuts.
+
+Context and content blocks
+- Question context panel.
+- Pending answer review panel.
+- Open-question answer review panel.
+- Duplicate linking field.
+- Submitted answers list when the item is an open question.
+
+Available actions
+- Approve.
+- Reject.
+- Request Changes.
+- Resolve Question.
+- Mark for FAQ Conversion.
+- Mark Duplicate.
+
+Keyboard shortcuts and interaction
+- J / K should navigate through queue items.
+- A should approve.
+- R should reject.
+- C should request changes.
+- Escape should reset to the first queue item.
+
+Behavior details
+- The console should keep the active item visible while queue items update.
+- Moderators should be able to inspect the question description, tags, category, and age.
+- For pending answers, the answer body should be visible and ready for a moderation decision.
+- For open questions, the submitted answers should be listed in the review area.
+- Duplicate linking should allow the moderator to connect the current item to an original question ID.
+- Mark for FAQ conversion should flag strong answers for the knowledge-base flow.
+
+3. /moderator/analytics
+This is the moderator performance and throughput page.
+
+Primary responsibilities
+- Summarize personal moderation output.
+- Show whether the queue is growing or shrinking.
+- Help moderators understand where they are spending time.
+
+Displayed metrics
+- Approvals Today.
+- Approvals This Week.
+- Average Response Time.
+
+Displayed charts and sections
+- Queue Depth Trend.
+- Categories With Most Pending Items.
+- Insight panel for focus guidance.
+
+Behavior details
+- The page should help the moderator choose what to work on first.
+- Queue depth trends should help reveal whether review throughput is healthy.
+- Category breakdown should identify where backlog is strongest.
+
+4. /moderator/faq-candidates
+This is the knowledge-promotion page for strong community answers.
+
+Primary responsibilities
+- Show answers that are ready to become formal FAQs.
+- Capture the approval metadata around those answers.
+- Provide a bridge into FAQ creation.
+
+Displayed information
+- Approved answer status.
+- Original question.
+- Approved answer body.
+- Approved date or pending metadata.
+- Answered-by attribution.
+- Approved-by attribution.
+
+Available actions
+- Convert to FAQ for admin users.
+
+Behavior details
+- The page should show approved community answers in a readable card layout.
+- If there are no candidates, the page should explain that nothing is ready for promotion.
+- Admin users should have the conversion CTA available directly from the card.
+
+5. /admin/faqs
+This is the shared FAQ management surface used by moderators and admins.
+
+Primary responsibilities
+- Let moderators help maintain the knowledge base.
+- Allow them to review, publish, archive, and update FAQs.
+- Keep the moderation workflow connected to editorial maintenance.
+
+Behavior details
+- The shared FAQ management page should behave identically across moderator and admin access.
+- Moderators should be able to move from moderation outcomes into knowledge-base cleanup without switching toolsets.
+- Categories and tags should remain inside FAQ Management, not in separate sidebar entries.
+
+Moderator Workflow Expectations
+- Queue first, then console, then promotion or FAQ maintenance.
+- Use the queue for triage and the console for decisions.
+- Use analytics to guide where attention should go next.
+- Use FAQ candidates to convert high-quality community answers into institutional content.
+
+Moderator Documentation Checklist
+- Mirror faq-main route names and workflows.
+- Preserve the exact queue filters and action bar structure.
+- Keep the console keyboard-driven and context-rich.
+- Keep the FAQ conversion flow connected to moderation outcomes.
+- Keep the shared FAQ Management page available from the moderator path.
+
+Implementation notes
+- This file should be treated as the authoritative moderator-branch documentation for faq-Avatar.
+- If new moderator tools are added later, document them under the relevant section rather than appending a separate summary block.
+- Keep wording aligned with the shared dashboard style already established in the branch.
+
+Additional Suggestions to Make the Moderator Surface Stronger
+These are additive improvements intended to make moderation faster, safer, and more seamless without changing the core queue-first workflow already defined above.
+
+1. Add a true moderator home dashboard
+- Give moderators a landing page that opens with queue size, unresolved pressure, answer turnaround time, and items at risk of SLA breach.
+- Show a “start here” card that points to the highest-priority item for the current shift.
+- Keep this home page lightweight so it can act as the fastest operational entry point.
+
+2. Add assignment, ownership, and handoff support
+- Let a moderator claim an item so there is a visible owner during review.
+- Allow handoff notes when an item needs another moderator with a different expertise area.
+- Add “awaiting admin review” or “escalated” states where moderation alone is not enough.
+
+3. Add moderation templates and response macros
+- Provide reusable templates for approval notes, rejection reasons, change-request feedback, and duplicate reasoning.
+- Make macros searchable and editable so teams can standardize tone and reduce repetitive typing.
+- Let the console insert a template with one keystroke and then personalize it before submission.
+
+4. Add queue intelligence beyond simple priority
+- Rank items using a combination of urgency, age, number of students affected, and category pressure.
+- Surface “many students asked the same thing” badges directly in the queue and console.
+- Add a fatigue-aware or load-balanced sort mode so the work is distributed more fairly.
+
+5. Add conflict-safe moderation workflows
+- If two moderators open the same item, warn about concurrent review and show the latest action taken.
+- Prevent stale updates from overwriting newer decisions.
+- Record who made the final decision and when, then expose it in the action history.
+
+6. Add richer context on every review card
+- Show the question source, category, repeat count, related FAQ matches, and recent student activity on the review surface.
+- Show the answer history and prior moderation notes if the item has already been touched before.
+- Use compact badges so the context is visible without overwhelming the main answer body.
+
+7. Add a moderation inbox for follow-up work
+- Keep items that require a second look, admin escalation, or delayed verification in a dedicated follow-up queue.
+- Allow moderators to snooze a record and bring it back at a later time.
+- Add reminder rules for items that were skipped or partially completed.
+
+8. Add keyboard-first command coverage
+- Expand shortcuts so the moderator can filter, jump, assign, approve, reject, request changes, resolve, and mark FAQ candidates without leaving the keyboard.
+- Show shortcut hints in the action bar and on hover.
+- Keep the most common actions reachable with one key press.
+
+9. Add better analytics for reviewer coaching
+- Show personal accuracy, throughput, average time to decision, and common decision types.
+- Add category-by-category performance so a moderator can see where they are strongest or slowest.
+- Use this data for staffing and coaching rather than for punitive reporting.
+
+10. Add queue collaboration notes
+- Allow a moderator to leave internal notes on a queue item for the next reviewer.
+- Support mentions or lightweight internal references when the team needs a second opinion.
+- Keep these notes separate from the public-facing moderation note.
+
+11. Add smoother answer comparison tools
+- When reviewing similar answers, show side-by-side differences in tone, completeness, and policy alignment.
+- Allow the moderator to expand the next two answers first, then the full chain, exactly as the workflow already expects.
+- Make the comparison view easy to scan when there are many student answers.
+
+12. Add escalation and exception handling
+- Introduce explicit states for “needs policy review,” “needs admin decision,” and “needs evidence.”
+- Let a moderator route rare or risky cases to the proper owner with one action.
+- Add a reason field for every escalation so the handoff is never ambiguous.
+
+13. Add load-aware queue smoothing
+- Automatically rebalance queue ordering when one category has too many urgent items at once.
+- Offer a secondary view that shows “quick wins first” for short work sessions.
+- Add a long-form view for deeper review sessions when the moderator wants to work through a cluster end-to-end.
+
+14. Add stronger visibility for community convergence
+- Show when many students have asked the same or similar question.
+- Surface the student count and the identity list behind a cluster so moderators can decide whether to answer once or promote to FAQ.
+- Use this to turn repeated questions into institutional content faster.
+
+15. Add safe performance safeguards
+- Cache queue summaries and analytics where possible so the console stays responsive.
+- Prefetch the selected item’s answers and related context while the queue row is loading.
+- Keep long lists virtualized or paginated to avoid heavy rendering when queues grow.
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+Current Concern by Meena 
+
+Students may:
+Forget to include important details.
+Notice mistakes in wording after posting.
+Realize the question is unclear after submission.
+
+Proposed Change
+
+Allow students to edit their Community Q&A question after posting, but only until the first answer is submitted.
+
+Rules
+Student can edit:
+Question title (if applicable).
+Question description.
+Attached screenshots/files.
+Category.
+
+Editing remains enabled while:
+No community answer exists.
+Moderator has not responded.
+Automatically disable editing when:
+First answer is submitted.
+Moderator response is posted.
+
+Reason
+
+This prevents answer context from changing after students have already started responding.
+
+
+
+
+
+
+ Question Deletion Before Answers Arrive
+
+Current Concern
+A student's doubt may already be resolved through Daily meetings.
+Keeping such questions in the moderation queue wastes reviewer time.
+
+Proposed Change
+Allow students to delete their own Community Q&A question while it has no answers.
+
+Rules
+Delete option remains visible only when:
+No answers exist.
+No moderator action has occurred.
+
+Delete option automatically disappears when:
+First answer is submitted.
+Moderator interacts with the question.
+
+Alternative:
+Instead of permanent deletion, provide 'Mark as Resolved'
+This keeps analytics intact while removing the question from active review queues.
+
+ 
+
+
+
+ Personal Questions vs Community Questions
+
+Current Concern
+Students may prefer "Personal Question" for every query because:
+
+More Accurate response.
+Less public visibility.
+
+This could overload moderators.
+
+Proposed Change
+Make Community Q&A the default path.
+
+Suggested Workflow
+	Student submits question.
+	System checks:
+	FAQ.
+	Similar Community Questions.
+	If no answer exists:
+	Question automatically enters Community Q&A.
+
+Personal Questions Should Be Restricted To:
+Account issues.
+Attendance issues.
+Personal evaluation concerns.
+Sensitive personal information.
+Internship-specific private concerns.
+Recommendation
+
+Add a warning:
+
+"Personal Questions should only be used for private or sensitive matters."
+If not followed, there could be a deduction of spurti points
+
+Everything else should flow through Community Q&A.
+
+Spurti Points Distribution Improvements
+Current Concern
+
+If only Top 3 answers receive points Students may stop answering because:
+
+Chances of earning points become very low.
+New contributors lose motivation.
+
+Proposed System
+Award points based on contribution quality rather than ranking position.
+
+Example
+Action	Points
+
+Moderator Approved	+2
+Selected as Best Answer	+5
+Converted into FAQ	+10
+
+Benefits
+Encourages participation.
+Rewards quality.
+New students still earn points.
+Prevents "winner takes all" behaviour.
+
+Negative points for:
+
+Rejected answers.
+Spam.
+Duplicate responses.
+
+
+
+
+
+ 
+Anonymous Community Answers
+
+Current Concern
+Some students may hesitate to answer because:
+Their name is publicly visible.
+Fear of giving an incorrect answer.
+Fear of judgment from peers.
+
+Proposed Change
+Allow anonymous display for students.
+
+Moderator/Admin View Still shows
+
+Student Name
+Student ID
+Contribution history
+
+Benefits
+Increases participation.
+Reduces hesitation.
+Encourages first-time contributors.
+
+Maintains accountability internally.
+
+
+
+
+
+Ranking Visibility Privacy Controls
+
+Current Concern
+Displaying all rankings publicly can discourage lower-ranked students.
+
+Example:
+A student ranked #450 may feel embarrassed.
+
+Proposed Change
+
+Public leader board displays only Top 100 Students
+
+Students Beyond Top 100 Can only see:
+Their own rank.
+Their own statistics.
+
+Example
+Student ranked #450 sees:
+Your Rank: #450
+But other students cannot see who holds rank #450.
+
+Benefits
+Maintains motivation.
+Prevents public comparison pressure.
+Keeps competition healthy.
+
+
+
+
+
+FAQ Feedback Enhancement – Introduce "Outdated" Status
+
+Current Concern
+The current FAQ feedback system only provides:
+
+Helpful
+Unhelpful (or Downvote)
+
+However, an FAQ may become incorrect due to age rather than misinformation.
+
+Students may click Unhelpful even though the answer was historically correct.
+This creates misleading quality metrics and makes it difficult for moderators to identify the real issue.
+
+Proposed Change
+Replace the current  model with:
+
+Helpful
+Unhelpful
+Outdated
+
+When an FAQ receives Outdated reports:
+
+Add an "Outdated Reports" counter to FAQ Management.
+5+ outdated reports- System automatically flags FAQ as: Needs Review
+10+ outdated reports-High Priority Review Alert for Moderators and Admins.
+
+Dashboard Additions
+FAQ Management
+
+Add columns:
+
+Helpful Count
+Unhelpful Count
+Outdated Count
+
+Add filters:
+
+Helpful FAQs
+Flagged FAQs
+Outdated FAQs
+FAQ Quality Monitoring
+
+Add a new dashboard card:
+Outdated FAQs
+
+Displays:
+
+Number of FAQs marked outdated.
+FAQs awaiting review.
+FAQs updated after outdated reports.
+
+----------------------------------------------------
+----------------------------------------------------
+Requirements posted by Joyita Bhawal : 
+Suggestive changes/features 
+Student
+Add a collapse all button on top when multiple faqs are opened so that all closes at once.
+Moderator/ Admin
+Let user add category/tags while creating an faq too alongwith the designated place to do so. Makes it more accessible just in case user realises they dont have a certain category then they dont need to leave the creation.
+Since all faqs are getting listed in faq management page, let users filter out status/categories as they are unordered. Like showing only the Draft ones. Maybe add a filter icon right next to the headers and let users choose from a dropdown.
+
+Double verify before deleting a faq. It directly deletes as of now.
+General
+On collapsing the sidebar, the profile icon is vanishing from bottom of sidebar. Better to keep the icon and a logout symbol as a stack form. 
+On hovering any icon, make a bubble appear denoting what’s the icon for. Like hovering over the pencil icon would say Edit. 
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Requirements Posted by : Jahnvi Paliwal
+
+Final Parameters :
+
+Create a modular semantic search engine that can be attached to any backend route/service.
+
+Architecture:
+
+Main backend: Node.js
+Semantic embedding service: Python FastAPI microservice
+Database: Existing MongoDB
+Cache: Redis
+Queue: BullMQ
+Requirements:
+
+No paid APIs
+No OpenAI/external AI calls
+CPU-only
+Low RAM usage
+Very fast semantic similarity search
+Production-ready
+Modular and scalable
+Multi-user support
+Core Flow:
+
+1.      Convert user question → embeddings
+2.      Compare with Knowledge Base using cosine similarity
+
+If found:
+Show flash question + answer
+Return similarity score + source type = knowledge_base
+If not found:
+Move to Community Search
+
+3.      Compare with cached community questions (last 7 days)
+·        If match found:
+o    Show already answered/community question
+o    Add current question to cached memory (count++)
+o    Return source type = cached_question
+
+·        If no match found:
+o    Upload/save as new community question
+o    Return "not found" or waiting for answer status
+
+---

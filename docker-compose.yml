@@ -1,0 +1,67 @@
+version: '3.9'
+
+# Local development stack — mirrors frostysparkle/faq docker-compose.yml
+# adapted for the TypeScript monorepo layout.
+#
+# Usage:
+#   cp .env.example .env   # fill in secrets
+#   docker-compose up      # starts mongo + backend + frontend
+#
+# MongoDB note: when using Atlas, comment out the `mongo` service and set
+#   MONGODB_URI in .env to your Atlas connection string instead.
+
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  server:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/apps/server/node_modules
+    ports:
+      - '4000:4000'
+    env_file: .env
+    environment:
+      - NODE_ENV=development
+      # Override MONGODB_URI to use local mongo container (comment out if using Atlas)
+      - MONGODB_URI=mongodb://mongo:27017/samagama
+    depends_on:
+      mongo:
+        condition: service_healthy
+    command: >
+      sh -c "npm ci &&
+             npm run build:server &&
+             node apps/server/dist/index.js"
+
+  client:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/apps/client/node_modules
+    ports:
+      - '5173:5173'
+    environment:
+      - VITE_API_URL=http://localhost:4000
+    depends_on:
+      - server
+    command: >
+      sh -c "npm ci &&
+             npm run build:client &&
+             npx vite preview --host 0.0.0.0 --port 5173 --config apps/client/vite.config.ts"
+
+volumes:
+  mongo_data:

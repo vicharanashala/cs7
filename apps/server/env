@@ -1,0 +1,100 @@
+# Server runtime environment.
+NODE_ENV=development
+PORT=4000
+
+# MongoDB connection
+MONGODB_URI=mongodb://127.0.0.1:27017/samagama
+
+# JWT secrets
+JWT_ACCESS_SECRET=a1006bbb05e5040f99f58be08254cf57b07b7448a4f765718d736d0f43ab42bbe9d890387413e3baee68613fbb05617a
+JWT_REFRESH_SECRET=0fe685c3451e83de155f59b437801e03a96a8f24c6f7f6b1925c23213a4349c9035fd8989438b93eee067d7686f8ff79
+
+# CORS
+CORS_ORIGINS=http://localhost:5173
+
+# Logging
+LOG_LEVEL=info
+
+# ─── AI Provider Configuration ───────────────────────────────────────────────
+#
+# Two providers are supported. Switch by changing the values below.
+# No code changes are needed — only this file differs between environments.
+#
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │ OPTION 1 — Ollama (local, free, recommended for development)            │
+# │                                                                         │
+# │  LLM_PROVIDER=ollama                                                    │
+# │  EMBEDDING_PROVIDER=ollama                                              │
+# │  GEMINI_API_KEY=          (leave blank)                                 │
+# │                                                                         │
+# │  Prerequisites (one-time setup):                                        │
+# │    ollama pull all-minilm     ← embeddings (Check FAQ / Ask Question)  │
+# │    ollama pull gemma3:4b      ← LLM (Yaksha chatbot)                   │
+# │                                                                         │
+# │  Pros: completely free, works offline, no rate limits.                  │
+# │  Cons: requires Ollama running locally; not suitable for production     │
+# │        servers (high RAM usage, no horizontal scaling).                 │
+# └─────────────────────────────────────────────────────────────────────────┘
+#
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │ OPTION 2 — Google Gemini API (recommended for production)               │
+# │                                                                         │
+# │  LLM_PROVIDER=gemini                                                    │
+# │  EMBEDDING_PROVIDER=gemini                                              │
+# │  GEMINI_API_KEY=your_key_here                                           │
+# │                                                                         │
+# │  Get a free API key at: https://aistudio.google.com/apikey             │
+# │                                                                         │
+# │  Free-tier rate limits (as of 2026):                                    │
+# │    text-embedding-004  (Check FAQ / Ask Question)                       │
+# │      → 1,500 requests/minute — more than sufficient for an internship   │
+# │        portal with hundreds of simultaneous students.                   │
+# │    gemini-2.0-flash  (Yaksha chatbot replies)                           │
+# │      → 1,500 requests/day, 15 requests/minute on the free tier.        │
+# │        For a cohort of 300 students asking ~5 questions each = 1,500   │
+# │        total — fits exactly within the free daily quota.                │
+# │        Upgrade to the paid tier (~$0.10 per 1M tokens) if you exceed   │
+# │        this, which only happens with very active cohorts.               │
+# │                                                                         │
+# │  Pros: no server RAM cost, scales to thousands of users, high accuracy. │
+# │  Cons: requires internet; usage above free tier incurs small cost.      │
+# └─────────────────────────────────────────────────────────────────────────┘
+#
+# See apps/server/AI_SETUP.md for full documentation, alternative providers,
+# and the roadmap for Option D (LLM synthesis in the Ask Question flow).
+#
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │ OPTION 3 — Gemini embeddings + Groq LLM (best free-tier combination)   │
+# │                                                                         │
+# │  EMBEDDING_PROVIDER=gemini   ← Check FAQ / Check Community Questions   │
+# │  LLM_PROVIDER=groq           ← Yaksha chatbot replies                  │
+# │  GEMINI_API_KEY=your_key     ← from https://aistudio.google.com/apikey │
+# │  GROQ_API_KEY=your_key       ← from https://console.groq.com           │
+# │                                                                         │
+# │  Why this combination is best for production:                           │
+# │    Gemini text-embedding-004 → 1,500 embedding req/min (free)          │
+# │    Groq llama-3.3-70b        → 14,400 chat req/day (free)              │
+# │      (10× the daily quota of Gemini's chat model)                      │
+# │    Groq is also significantly faster — ~300ms vs ~2s for Gemini chat.  │
+# └─────────────────────────────────────────────────────────────────────────┘
+#
+# See apps/server/AI_SETUP.md for full documentation and the Option D roadmap.
+#
+# ── Active configuration ──────────────────────────────────────────────────
+
+# Gemini — embeddings (Check FAQ + Check Community Questions):
+EMBEDDING_PROVIDER=gemini
+GEMINI_API_KEY=
+
+# Chatbot LLM (Yaksha) — using Ollama locally (free, no API cost):
+LLM_PROVIDER=ollama
+
+# Groq key stored here for future use if you decide to switch the chatbot to Groq.
+# To activate: change LLM_PROVIDER=groq above.
+GROQ_API_KEY=
+
+# Ollama — kept as local fallback (embeddings + LLM if API keys are removed):
+# LLM_PROVIDER=ollama
+# EMBEDDING_PROVIDER=ollama
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=gemma3:4b
