@@ -1,0 +1,40 @@
+// Domain error class. Controllers throw these; the global error handler maps them to HTTP responses.
+
+export class ApiError extends Error {
+  public readonly statusCode: number;
+  public readonly code: string;
+  public readonly details?: unknown;
+  public readonly isOperational: boolean;
+
+  constructor(statusCode: number, code: string, message: string, details?: unknown) {
+    super(message);
+    this.name = 'ApiError';
+    this.statusCode = statusCode;
+    this.code = code;
+    this.details = details;
+    this.isOperational = true;
+    Error.captureStackTrace?.(this, ApiError);
+  }
+
+  static badRequest(message: string, details?: unknown): ApiError {
+    return new ApiError(400, 'BAD_REQUEST', message, details);
+  }
+  static unauthorized(message = 'Authentication required'): ApiError {
+    return new ApiError(401, 'UNAUTHORIZED', message);
+  }
+  static forbidden(message = 'Insufficient permissions'): ApiError {
+    return new ApiError(403, 'FORBIDDEN', message);
+  }
+  static notFound(message = 'Resource not found'): ApiError {
+    return new ApiError(404, 'NOT_FOUND', message);
+  }
+  static conflict(message: string): ApiError {
+    return new ApiError(409, 'CONFLICT', message);
+  }
+  static unprocessable(message: string, details?: unknown): ApiError {
+    return new ApiError(422, 'UNPROCESSABLE_ENTITY', message, details);
+  }
+  static internal(message = 'Internal server error'): ApiError {
+    return new ApiError(500, 'INTERNAL_ERROR', message);
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "samagama-portal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Samagama Internship Portal — FAQ, Community Q&A, Moderation, and RAG Chatbot (MERN)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:server & npm run dev:client",
+    "dev:server": "npm run dev --workspace @samagama/server",
+    "dev:client": "npm run dev --workspace @samagama/client",
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build --workspace @samagama/shared",
+    "build:server": "npm run build --workspace @samagama/server",
+    "build:client": "npm run build --workspace @samagama/client",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css,html}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css,html}\"",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}
